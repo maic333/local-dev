@@ -25,9 +25,10 @@ services:
 #      - '6379'
 #    restart: 'unless-stopped'
  mysql:
-   image: 'biarms/mysql:5.7.30'
+   image: mysql:8.0.39
    container_name: 'mysql'
-   command: --max_allowed_packet=20000M --sql_mode="NO_ENGINE_SUBSTITUTION,ALLOW_INVALID_DATES" --sort_buffer_size=512000
+   command: --default-authentication-plugin=mysql_native_password --max-connections=1000 --wait-timeout=2147483 --join-buffer-size=10M  --net-read-timeout=60000 --connect-timeout=60 --innodb-buffer-pool-size=2G --innodb-buffer-pool-instances=16 --innodb-log-file-size=1G --key-buffer-size=512M --sql-mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+  #  command: --max_allowed_packet=20000M --sql_mode="NO_ENGINE_SUBSTITUTION,ALLOW_INVALID_DATES" --sort_buffer_size=512000
    environment:
      MYSQL_ROOT_PASSWORD: 'root'
      MYSQL_ROOT_HOST: '%'
@@ -36,8 +37,7 @@ services:
    expose:
      - '3306'
    volumes:
-     - './data/mysql/db:/var/lib/mysql'
-     - './initial.sql:/docker-entrypoint-initdb.d/initial.sql'
+     - '~/data/mysql/db:/var/lib/mysql'
    restart: 'unless-stopped'
 #  mongodb:
 #    image: arm64v8/mongo:6
