@@ -1,0 +1,81 @@
+#!/bin/sh
+
+PROJECT_PATH="~/workspace/smyle"
+
+# supported actions
+ACTION_BRANCH="branch"
+ACTION_CHECKOUT="checkout"
+ACTION_PULL="pull"
+ACTION_DEPLOY="deploy"
+ACTION_LS_APPS="ls-apps"
+
+SUPPORTED_ACTIONS_LIST="'$ACTION_BRANCH', '$ACTION_CHECKOUT', '$ACTION_PULL', '$ACTION_DEPLOY', '$ACTION_LS_APPS'"
+
+action_branch () {
+  echo ">>> Checking current branch..."
+
+  cd $PROJECT_PATH
+  pwd
+
+  echo ">>> Running: git branch"
+  git branch
+}
+
+action_checkout () {
+  local target_branch=$1
+
+  action_branch
+
+  echo ">>> Switching to branch $target_branch..."
+
+  cd $PROJECT_PATH
+  echo ">>> Running: git checkout $target_branch"
+  git checkout $target_branch
+  echo ">>> Running: git pull"
+  git pull
+}
+
+action_pull () {
+  action_branch
+
+  echo ">>> Pulling the latest changes..."
+
+  cd $PROJECT_PATH
+  echo ">>> Running: git pull"
+  git pull
+}
+
+action_deploy () {
+  local app=$1
+  local build=$2
+
+  cd $PROJECT_PATH
+
+  ./utils/deploy.sh smyle $app $build
+}
+
+
+# script input
+action=$1
+action_param_1=$2
+action_param_2=$3
+
+if [[ -z $action ]]; then
+  echo "Missing action. Usage:\r\n\tsmyle <action> [<action_params>]"
+  exit 1
+fi
+
+if [[ $action = $ACTION_BRANCH ]]; then
+  action_branch
+elif [[ $action = $ACTION_CHECKOUT ]]; then
+  action_checkout $action_param_1
+elif [[ $action = $ACTION_PULL ]]; then
+  action_pull
+elif [[ $action = $ACTION_DEPLOY ]]; then
+  action_deploy $action_param_1 $action_param_2
+else
+  echo "Error: wrong action '$action'. Supported actions:\r\n\t$SUPPORTED_ACTIONS_LIST"
+    exit 1
+fi
+
+exit 0

@@ -1,0 +1,38 @@
+#!/bin/sh
+
+PROJECT_PATH="~/workspace/shyn"
+
+# supported actions
+ACTION_DEPLOY="deploy"
+ACTION_LS_APPS="ls-apps"
+
+SUPPORTED_ACTIONS_LIST="'$ACTION_DEPLOY', '$ACTION_LS_APPS'"
+
+action_deploy () {
+  local app=$1
+  local build=$2
+
+  cd $PROJECT_PATH
+
+  ./utils/deploy.sh shynfashion $app $build
+}
+
+
+# script input
+action=$1
+action_param_1=$2
+action_param_2=$3
+
+if [[ -z $action ]]; then
+  echo "Missing action. Usage:\r\n\tshyn <action> [<action_params>]"
+  exit 1
+fi
+
+if [[ $action = $ACTION_DEPLOY ]]; then
+  action_deploy $action_param_1 $action_param_2
+else
+  echo "Error: wrong action '$action'. Supported actions:\r\n\t$SUPPORTED_ACTIONS_LIST"
+    exit 1
+fi
+
+exit 0
