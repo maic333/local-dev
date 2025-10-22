@@ -1,0 +1,207 @@
+{
+  "prettier.singleQuote": true,
+  "files.autoSave": "onFocusChange",
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/*.log": true,
+    "**/.angular": true,
+    "**/.nx": true,
+    "**/assets/appIcon": false,
+    "**/assets/notificationIcon": false,
+    "**/package-lock.json": true
+  },
+  "window.commandCenter": 1,
+  "editor.formatOnPaste": true,
+  "editor.tabSize": 2,
+  "editor.fontSize": 13,
+  "editor.lineHeight": 1.5,
+  "editor.letterSpacing": 0.2,
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.smoothScrolling": false,
+  "editor.fontWeight": "400",
+  "workbench.colorTheme": "Webstorm italic theme",
+  "workbench.editor.enablePreview": false,
+  "gitlens.views.scm.grouped.views": {
+    "commits": true,
+    "branches": false,
+    "remotes": true,
+    "stashes": false,
+    "tags": true,
+    "worktrees": true,
+    "contributors": true,
+    "repositories": false,
+    "searchAndCompare": false,
+    "launchpad": false
+  },
+  "gitlens.views.branches.branches.layout": "list",
+  "git.enableSmartCommit": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorCustomizations": {
+    "editor.background": "#1e1f22",
+    "sideBar.background": "#2b2d30",
+    "tab.activeBackground": "#545a64",
+    "list.inactiveSelectionBackground": "#545a64"
+  },
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "keyword",
+          "keyword.control",
+          "keyword.operator",
+          "variable.language",
+          "variable.other",
+          "function",
+          "entity.name.function",
+          "support.function",
+          "variable",
+          "keyword.other",
+          "storage.modifier",
+          "storage.type",
+          "comment",
+          "variable.other.object",
+          "variable.other.object.property.ts",
+          "string.quoted.single.ts",
+          "string.quoted.double.ts",
+          "string.template.ts",
+          "support.type.property-name.json.comments",
+          "string.quoted.double.json.comments",
+          "constant.language.json.comments",
+          "constant.language.null.ts",
+          "support.type.property-name.json",
+          "string.quoted.double.json",
+          "support.type.vendored.property-name.css",
+          "support.type.property-name.css",
+          "variable.scss",
+          "constant.other.color.rgb-value.hex.css",
+          "support.constant.property-value.css",
+          "string.quoted.single.scss",
+          "constant.language.boolean",
+          "variable.other.property"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      },
+      {
+        "scope": [
+          "support.type.builtin.ts",
+          "support.type.primitive.ts",
+          "punctuation.terminator.statement.ts",
+          "punctuation.separator.parameter.ts",
+          "punctuation.separator.comma.ts",
+          "punctuation.separator.dictionary.pair.json.comments",
+          "punctuation.separator.delimiter.scss",
+          "punctuation.separator.delimiter.css",
+          "punctuation.terminator.rule.scss",
+          "punctuation.terminator.rule.css"
+        ],
+        "settings": {
+          "foreground": "#CC7832",
+          "fontStyle": ""
+        }
+      },
+      {
+        "scope": [
+          "variable.other.object.property.ts",
+          "variable.other.local",
+          "support.class.promise.ts"
+        ],
+        "settings": {
+          "foreground": "#9876AA",
+          "fontStyle": ""
+        }
+      },
+      {
+        "scope": [
+          "variable.scss",
+          "constant.other.color.rgb-value.hex.css"
+        ],
+        "settings": {
+          "foreground": "#6897BB",
+          "fontStyle": ""
+        }
+      },
+      {
+        "scope": [
+          "keyword.other.unit.px.css",
+          "support.constant.property-value.css"
+        ],
+        "settings": {
+          "foreground": "#A5C261",
+          "fontStyle": ""
+        }
+      },
+      {
+        "scope": [
+          "variable.parameter.ts",
+          "entity.name.type.ts",
+          "entity.name.type.class.ts",
+          "entity.name.type.interface.ts",
+          "entity.name.type.enum.ts",
+          "entity.name.type.alias.ts",
+          "entity.other.inherited-class.ts",
+          "punctuation.definition.parameters.begin.ts",
+          "punctuation.definition.parameters.end.ts",
+          "punctuation.definition.block.ts",
+          "meta.brace.square.ts",
+          "support.type.vendored.property-name.css",
+          "support.type.property-name.css"
+        ],
+        "settings": {
+          "foreground": "#A9B7C6",
+          "fontStyle": ""
+        }
+      }
+    ]
+  },
+  "todohighlight.isEnable": true,
+  "todohighlight.include": [
+    "**/*.ts",
+    "**/*.js"
+  ],
+  "todohighlight.keywords": [
+    {
+      "text": "TODO",
+      "color": "#A8C023",
+      "backgroundColor": "transparent",
+      "overviewRulerColor": "#A8C023",
+      "fontStyle": "italic",
+      "isWholeLine": true
+    },
+    {
+      "text": "#TODO",
+      "color": "#A8C023",
+      "backgroundColor": "transparent",
+      "overviewRulerColor": "#A8C023",
+      "fontStyle": "italic",
+      "isWholeLine": true
+    }
+  ],
+  "diffEditor.ignoreTrimWhitespace": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.detectIndentation": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  }
+}
