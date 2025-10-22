@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PROJECT_PATH="~/workspace/planny"
+PROJECT_PATH="$HOME/workspace/planny"
 
 # supported actions
 ACTION_BRANCH="branch"

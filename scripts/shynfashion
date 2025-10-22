@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PROJECT_PATH="~/workspace/shyn"
+PROJECT_PATH="$HOME/workspace/shyn"
 
 # supported actions
 ACTION_DEPLOY="deploy"
