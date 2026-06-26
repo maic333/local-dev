@@ -1,0 +1,53 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "conta: Build",
+      "type": "node-terminal",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/tools/conta",
+      "command": "zsh -lc \"nvm use && npm run build:watch\""
+    },
+    {
+      "name": "conta: Debug",
+      "type": "node",
+      "program": "${workspaceFolder}/tools/conta/dist/main.js",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/tools/conta",
+      "console": "integratedTerminal",
+      "outputCapture": "std",
+      "runtimeExecutable": "${env:HOME}/.nvm/versions/node/v22.15.0/bin/node",
+      "skipFiles": ["<node_internals>/**"],
+      "autoAttachChildProcesses": false,
+      "outFiles": ["${workspaceFolder}/tools/conta/dist/**/*.js"],
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "/*": "${workspaceFolder}/tools/conta/src/*"
+      }
+    },
+    {
+      "name": "smyle-tools: Build",
+      "type": "node-terminal",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/tools/smyle-tools",
+      "command": "zsh -lc \"nvm use && npm run build:watch\""
+    },
+    {
+      "name": "smyle-tools: citybpm-customers",
+      "type": "node",
+      "program": "${workspaceFolder}/tools/smyle-tools/dist/citybpm-customers.js",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/tools/smyle-tools",
+      "console": "integratedTerminal",
+      "outputCapture": "std",
+      "runtimeExecutable": "${env:HOME}/.nvm/versions/node/v22.15.0/bin/node",
+      "skipFiles": ["<node_internals>/**"],
+      "autoAttachChildProcesses": false,
+      "outFiles": ["${workspaceFolder}/tools/smyle-tools/dist/**/*.js"],
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "/*": "${workspaceFolder}/tools/smyle-tools/src/*"
+      }
+    }
+  ]
+}
